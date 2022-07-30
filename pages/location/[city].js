@@ -2,11 +2,11 @@ import React from "react";
 import cities from "../../lib/city.list.json";
 import TodaysWeather from "../../components/TodaysWeather";
 import HourlyWeather from "../../components/HourlyWeather";
-// import WeeklyWeather from "../../components/WeeklyWeather";
-import Link from "next/link";
 import Head from "next/head";
 import SearchBox from "../../components/SearchBox";
 import moment from "moment-timezone";
+import WeeklyWeather from "../../components/WeeklyWeather";
+import Link from "next/link";
 
 export async function getServerSideProps(context) {
 	const city = getCityId(context.params.city);
@@ -101,10 +101,10 @@ export default function City({
 						hourlyWeather={hourlyWeather}
 						timezone={timezone}
 					/>
-					{/* <WeeklyWeather
+					<WeeklyWeather
 						weeklyWeather={weeklyWeather}
 						timezone={timezone}
-					/> */}
+					/>
 				</div>
 			</div>
 		</>
